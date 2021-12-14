@@ -1,0 +1,57 @@
+html {
+  --color-primary-800: rgb(82, 25, 187);
+  --color-primary-600: rgb(126, 57, 253);
+  --color-primary-300: rgb(215, 196, 252);
+  --color-primary-200: rgb(231, 219, 253);
+  --color-primary-90: rgb(243, 238, 253);
+
+  --color-grey-900: rgb(41, 41, 41);
+}
+
+body {
+  text-align: center;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--color-primary-90);
+  color: var(--color-grey-900);
+}
+
+header {
+  background-color: var(--color-primary-600);
+  color: white;
+  padding: 2rem 0;
+}
+
+main {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+ul li {
+  padding: 1rem 3rem;
+  background-color: var(--color-primary-200);
+  border-radius: 7px;
+  margin: 2.5rem 0.7rem;
+}
+
+.player-name {
+  color: var(--color-primary-800);
+}
+
+li a {
+  /* display: inline-block; */
+  text-decoration: none;
+  padding: 10px 25px;
+  color: var(--color-primary-800);
+  border-radius: 3px;
+}
+
+li a:hover {
+  background-color: var(--color-primary-300);
+}
