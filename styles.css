@@ -11,7 +11,7 @@ html {
 body {
   text-align: center;
   margin: 0;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: var(--color-primary-90);
   color: var(--color-grey-900);
 }
@@ -40,12 +40,24 @@ ul li {
   margin: 2.5rem 0.7rem;
 }
 
-.player-name {
+li .player-number {
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+li .player-name {
   color: var(--color-primary-800);
+  margin: 0;
+}
+
+li .player-shape {
+  margin: 10px 0 5px 0;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
 li a {
-  /* display: inline-block; */
+  display: inline-block;
   text-decoration: none;
   padding: 10px 25px;
   color: var(--color-primary-800);
