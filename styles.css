@@ -60,7 +60,7 @@ li .player-shape {
 li a {
   display: inline-block;
   text-decoration: none;
-  padding: 10px 25px;
+  padding: 7px 25px;
   color: var(--color-primary-800);
   border-radius: 3px;
 }
@@ -71,12 +71,13 @@ li a:hover {
 
 #start-game {
   text-transform: capitalize;
-  padding: 8px 30px;
+  padding: 10px 30px;
   border: transparent;
   border-radius: 3px;
   background-color: var(--color-primary-600);
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 #start-game:hover {
