@@ -1,40 +1,59 @@
 let player1EditButton = document.getElementById("edit-player-1");
 let player2EditButton = document.getElementById("edit-player-2");
+let formElement = document.querySelector("aside");
+let backdropElement = document.getElementById("backdrop");
 
 function openNameForm(event) {
-  let formElement = document.querySelector("aside");
-  let backdropElement = document.getElementById("backdrop");
-
   formElement.style.display = "block";
   backdropElement.style.display = "block";
 
+  let playerForm = event.target.parentElement.id;
+
+  if (playerForm == "player-1") {
+    formElement.id = "1";
+  } else {
+    formElement.id = "2";
+  }
+
   document.getElementById("playername").focus();
-
-  let cancelButton = document.querySelector("aside .btn-invert");
-  let submitButton = document.getElementById("submit-btn");
-
-  cancelButton.addEventListener("click", () => {
-    formElement.style.display = "none";
-    backdropElement.style.display = "none";
-    document.getElementById("name-input-error").textContent = "";
-  });
-
-  submitButton.addEventListener("click", (e) => {
-    // TODO: Prevent default behaviour of form submission
-    e.preventDefault();
-    let playerNameElement =
-      event.target.parentElement.querySelector(".player-name");
-    let playerNameInput = document.getElementById("playername").value;
-    if (playerNameInput.replace(/\s+/g, "") === "") {
-      document.getElementById("name-input-error").textContent = "Invalid name";
-      console.log("got problem");
-    } else {
-      playerNameElement.textContent = playerNameInput;
-      formElement.style.display = "none";
-      backdropElement.style.display = "none";
-    }
-  });
 }
 
 player1EditButton.addEventListener("click", openNameForm);
 player2EditButton.addEventListener("click", openNameForm);
+
+let cancelButton = document.querySelector("aside .btn-invert");
+
+cancelButton.addEventListener("click", () => {
+  let playerNameInput = document.getElementById("playername");
+
+  playerNameInput.value = '';
+  document.getElementById("name-input-error").textContent = "";
+
+  formElement.id = "";
+
+  formElement.style.display = "none";
+  backdropElement.style.display = "none";
+  
+});
+
+let submitButton = document.getElementById("submit-btn");
+
+submitButton.addEventListener("click", (event) => {
+  // TODO: Prevent default behaviour of form submission
+  event.preventDefault();
+
+  let playerNameElement = document
+    .getElementById("player-" + formElement.id)
+    .querySelector(".player-name");
+  let playerNameInput = document.getElementById("playername");
+
+  if (playerNameInput.value.replace(/\s+/g, "") === "") {
+    document.getElementById("name-input-error").textContent = "Invalid name";
+  } else {
+    playerNameElement.textContent = playerNameInput.value;
+    formElement.style.display = "none";
+    backdropElement.style.display = "none";
+  }
+
+  playerNameInput.value = '';
+});
