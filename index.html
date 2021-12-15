@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -19,13 +20,14 @@
       <p>Built with HTML, CSS, JavaScript and - of course - lots of love!</p>
     </header>
     <main>
-      <aside>
+      <div id="backdrop"></div>
+      <aside class="modal">
         <h2>Choose Your Name</h2>
         <form>
           <label for="playername">Player Name</label>
-          <input type="text" name="player-name" id="playername" />
+          <input type="text" name="player-name" id="playername" required />
           <button type="button" class="btn btn-invert">Cancel</button>
-          <button type="submit" class="btn">Confirm</button>
+          <button type="submit" class="btn" id="submit-btn">Confirm</button>
         </form>
       </aside>
       <section id="game-configuration">
@@ -34,13 +36,13 @@
             <p class="player-number">Player 1</p>
             <h2 class="player-name">PLAYER NAME</h2>
             <p class="player-shape">X</p>
-            <a href="#">Edit</a>
+            <a href="#" id="edit-player-1">Edit</a>
           </li>
           <li>
             <p class="player-number">Player 2</p>
             <h2 class="player-name">PLAYER NAME</h2>
             <p class="player-shape">O</p>
-            <a href="#">Edit</a>
+            <a href="#" id="edit-player-2">Edit</a>
           </li>
         </ul>
         <button class="btn">Start New Game</button>
