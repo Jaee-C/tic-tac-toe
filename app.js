@@ -8,15 +8,19 @@ function openNameForm(event) {
   formElement.style.display = "block";
   backdropElement.style.display = "block";
 
+  document.getElementById("playername").focus();
+
   let cancelButton = document.querySelector("aside .btn-invert");
   let submitButton = document.getElementById("submit-btn");
 
   cancelButton.addEventListener("click", () => {
     formElement.style.display = "none";
     backdropElement.style.display = "none";
+    document.getElementById("name-input-error").textContent = "";
   });
 
   submitButton.addEventListener("click", (e) => {
+    // TODO: Prevent default behaviour of form submission
     e.preventDefault();
     let playerNameElement =
       event.target.parentElement.querySelector(".player-name");
