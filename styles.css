@@ -69,10 +69,14 @@ aside label {
 
 aside input {
   display: block;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto;
   width: 15rem;
   border: solid 1px rgb(212, 212, 212);
   padding: 5px;
+}
+
+aside .button-group {
+  margin-top: 1rem;
 }
 
 ul {
@@ -142,4 +146,10 @@ li a:hover {
   cursor: pointer;
   background-color: var(--color-primary-90);
 
+}
+
+#name-input-error {
+  color: red;
+  margin: 2px 0;
+  font-size: 0.9rem;
 }

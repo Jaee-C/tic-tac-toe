@@ -26,8 +26,11 @@
         <form>
           <label for="playername">Player Name</label>
           <input type="text" name="player-name" id="playername" required />
-          <button type="button" class="btn btn-invert">Cancel</button>
-          <button type="submit" class="btn" id="submit-btn">Confirm</button>
+          <p id="name-input-error"></p>
+          <div class="button-group">
+            <button type="button" class="btn btn-invert">Cancel</button>
+            <button type="submit" class="btn" id="submit-btn">Confirm</button>
+          </div>
         </form>
       </aside>
       <section id="game-configuration">
