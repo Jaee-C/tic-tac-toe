@@ -26,6 +26,37 @@ main {
   margin: 0;
 }
 
+aside {
+  display: none;
+  position: absolute;
+  top: 140px;
+  left: 25%;
+  background-color: white;
+  margin: 10px auto;
+  padding: 1rem;
+  width: 600px;
+  border-radius: 8px;
+}
+
+aside h2 {
+  display: block;
+  margin: 0;
+}
+
+aside label {
+  display: block;
+  margin: 0.3rem 0;
+  font-weight: bold;
+}
+
+aside input {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 15rem;
+  border: solid 1px rgb(212, 212, 212);
+  padding: 5px;
+}
+
 ul {
   padding: 0;
   list-style-type: none;
@@ -69,18 +100,28 @@ li a:hover {
   background-color: var(--color-primary-300);
 }
 
-#start-game {
+.btn {
   text-transform: capitalize;
   padding: 10px 30px;
   border: transparent;
-  border-radius: 3px;
+  border-radius: 5px;
   background-color: var(--color-primary-600);
   color: white;
-  font-size: 1rem;
-  font-weight: normal;
+  font: inherit;
 }
 
-#start-game:hover {
+.btn-invert {
+  background-color: white;
+  color: var(--color-primary-600);
+}
+
+.btn:hover {
   cursor: pointer;
   background-color: var(--color-primary-800);
+}
+
+.btn-invert:hover {
+  cursor: pointer;
+  background-color: var(--color-primary-90);
+
 }
