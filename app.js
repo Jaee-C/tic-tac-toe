@@ -2,6 +2,7 @@ let player1EditButton = document.getElementById("edit-player-1");
 let player2EditButton = document.getElementById("edit-player-2");
 let formElement = document.querySelector("aside");
 let backdropElement = document.getElementById("backdrop");
+let nameErrorElement = document.getElementById("name-input-error");
 
 function openNameForm(event) {
   formElement.style.display = "block";
@@ -15,6 +16,7 @@ function openNameForm(event) {
     formElement.id = "2";
   }
 
+  nameErrorElement.textContent = "";
   document.getElementById("playername").focus();
 }
 
@@ -27,7 +29,6 @@ cancelButton.addEventListener("click", () => {
   let playerNameInput = document.getElementById("playername");
 
   playerNameInput.value = '';
-  document.getElementById("name-input-error").textContent = "";
 
   formElement.id = "";
 
@@ -39,7 +40,6 @@ cancelButton.addEventListener("click", () => {
 let submitButton = document.getElementById("submit-btn");
 
 submitButton.addEventListener("click", (event) => {
-  // TODO: Prevent default behaviour of form submission
   event.preventDefault();
 
   let playerNameElement = document
@@ -48,7 +48,7 @@ submitButton.addEventListener("click", (event) => {
   let playerNameInput = document.getElementById("playername");
 
   if (playerNameInput.value.replace(/\s+/g, "") === "") {
-    document.getElementById("name-input-error").textContent = "Invalid name";
+    nameErrorElement.textContent = "Invalid name";
   } else {
     playerNameElement.textContent = playerNameInput.value;
     formElement.style.display = "none";
