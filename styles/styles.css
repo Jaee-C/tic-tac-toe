@@ -1,13 +1,17 @@
 html {
-  --color-primary-800: rgb(140, 0, 255);
+  --color-primary-900: rgb(47, 4, 82);;
+  --color-primary-890: rgb(94, 4, 168);
   --color-primary-850: rgb(79, 10, 190);
+  --color-primary-800: rgb(140, 0, 255);
+  --color-primary-200: rgb(243, 227, 255);
+  --color-primary-100: rgb(247, 239, 247);
 }
 
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   color: rgb(44, 41, 44);
-  background-color: rgb(247, 239, 247);
+  background-color: var(--color-primary-100);
 }
 
 header {
