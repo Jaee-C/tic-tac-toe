@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="styles/overlays.css" />
     <link rel="stylesheet" href="styles/configuration.css" />
     <link rel="stylesheet" href="styles/game.css" />
-    <script src="app.js" defer></script>
+    <script src="scripts/config.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/app.js" defer></script>
     <title>Tic Tac Toe</title>
   </head>
   <body>
@@ -32,7 +34,7 @@
             <input type="text" name="playername" id="playername" required />
           </div>
           <div class="button-group">
-            <button type="button" class="btn-alt">Cancel</button>
+            <button type="button" class="btn-alt" id="overlay-cancel-btn">Cancel</button>
             <button type="submit">Confirm</button>
           </div>
         </form>
@@ -51,7 +53,7 @@
             <h2>Player 2</p>
             <h3>PLAYER NAME</h2>
             <p class="player-symbol">O</p>
-            <button class="btn-alt" id="edit-player-1">Edit</button>
+            <button class="btn-alt" id="edit-player-2">Edit</button>
           </li>
         </ol>
         <button>Start New Game</button>
