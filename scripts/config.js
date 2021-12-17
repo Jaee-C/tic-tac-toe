@@ -1,7 +1,7 @@
 /** Logic for player configurations */
 
 function openPlayerConfig(event) {
-    editedPlayer = +event.target.dataset.playerid;  // saves playerid as int
+    editedPlayer = +event.target.dataset.playerid; // saves playerid as int
     playerConfigOverlay.style.display = 'block';
     backdrop.style.display = 'block';
 }
@@ -11,6 +11,7 @@ function closePlayerConfig() {
     backdrop.style.display = 'none';
     formElement.firstElementChild.classList.remove('error');
     errorsOutput.textContent = '';
+    document.getElementById('playername').value = '';
 }
 
 // Handling player config form submission
@@ -18,7 +19,6 @@ function savePlayerConfig(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const enteredPlayerName = formData.get('playername').trim();
-    console.log(enteredPlayerName);
 
     // Form validation
     if (!enteredPlayerName) {
@@ -27,4 +27,12 @@ function savePlayerConfig(event) {
         return;
     }
 
+    const updatedPlayerDataElement = document.getElementById(
+        'player-' + editedPlayer + '-data'
+    );
+    updatedPlayerDataElement.children[1].textContent = enteredPlayerName;
+
+    players[editedPlayer - 1].name = enteredPlayerName;
+
+    closePlayerConfig();
 }
