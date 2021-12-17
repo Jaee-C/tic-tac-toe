@@ -1,5 +1,6 @@
 /** Variable declarations */
 let editedPlayer = 0;
+let activePlayer = 0;
 
 const players = [
     {
@@ -17,11 +18,13 @@ const backdrop = document.getElementById('backdrop');
 const formElement = document.querySelector('form');
 const errorsOutput = document.getElementById('config-errors');
 const gameArea = document.getElementById('active-game');
+const activePlayerName = document.getElementById('active-player-name');
 
 const editPlayer1Btn = document.getElementById('edit-player-1');
 const editPlayer2Btn = document.getElementById('edit-player-2');
 const overlayCancelBtn = document.getElementById('overlay-cancel-btn');
 const startNewGameBtn = document.getElementById('start-game-btn');
+const gameFieldElements = document.querySelectorAll('#game-board li');
 
 // Open config pop up window
 editPlayer1Btn.addEventListener('click', openPlayerConfig);
@@ -35,3 +38,7 @@ backdrop.addEventListener('click', closePlayerConfig);
 formElement.addEventListener('submit', savePlayerConfig);
 
 startNewGameBtn.addEventListener('click', startNewGame);
+
+for (const gameFieldElement of gameFieldElements) {
+    gameFieldElement.addEventListener('click', selectGameField);
+}
