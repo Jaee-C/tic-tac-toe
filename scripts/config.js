@@ -1,6 +1,7 @@
 /** Logic for player configurations */
 
-function openPlayerConfig() {
+function openPlayerConfig(event) {
+    editedPlayer = +event.target.dataset.playerid;  // saves playerid as int
     playerConfigOverlay.style.display = 'block';
     backdrop.style.display = 'block';
 }

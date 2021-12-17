@@ -1,4 +1,5 @@
 /** Variable declarations */
+let editedPlayer = 0;
 
 const playerConfigOverlay = document.getElementById('config-overlay');
 const backdrop = document.getElementById('backdrop');
