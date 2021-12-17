@@ -20,6 +20,7 @@ const errorsOutput = document.getElementById('config-errors');
 const editPlayer1Btn = document.getElementById('edit-player-1');
 const editPlayer2Btn = document.getElementById('edit-player-2');
 const overlayCancelBtn = document.getElementById('overlay-cancel-btn');
+const startNewGameBtn = document.getElementById('start-game-btn');
 
 // Open config pop up window
 editPlayer1Btn.addEventListener('click', openPlayerConfig);
@@ -31,3 +32,5 @@ backdrop.addEventListener('click', closePlayerConfig);
 
 // Player config form submission
 formElement.addEventListener('submit', savePlayerConfig);
+
+startNewGameBtn.addEventListener('click', startNewGame);
