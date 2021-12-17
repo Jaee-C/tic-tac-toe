@@ -36,5 +36,56 @@ function selectGameField(event) {
     // Store game state in a 2D array
     gameData[selectedRow][selectedCol] = activePlayer + 1;
 
+    const winnerId = gameOverCheck();
+    console.log(winnerId);
+
+    currentRound++;
     switchPlayer();
+}
+
+function gameOverCheck() {
+    // Checking rows
+    for (let i = 0; i < 3; i++) {
+        if (
+            gameData[i][0] > 0 &&
+            gameData[i][0] == gameData[i][1] &&
+            gameData[i][0] == gameData[i][2]
+        ) {
+            return gameData[i][0];
+        }
+    }
+
+    // Checking columns
+    for (let i = 0; i < 3; i++) {
+        if (
+            gameData[0][i] > 0 &&
+            gameData[0][i] == gameData[1][i] &&
+            gameData[0][i] == gameData[2][i]
+        ) {
+            return gameData[0][i];
+        }
+    }
+
+    // Diagonal: top left - bottom right
+    if (
+        gameData[0][0] > 0 &&
+        gameData[0][0] == gameData[1][1] &&
+        gameData[0][0] == gameData[2][2]
+    ) {
+        return gameData[0][0];
+    }
+
+    // Diagonal: bottom left - top right
+    if (
+        gameData[2][0] > 0 &&
+        gameData[2][0] == gameData[1][1] &&
+        gameData[1][1] == gameData[0][2]
+    ) {
+        return gameData[2][0];
+    }
+
+    if (currentRound == 9) {
+        return -1;
+    }
+    return 0;
 }
