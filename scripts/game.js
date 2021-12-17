@@ -1,10 +1,30 @@
 /** Game logic */
 
+function resetGameStatus() {
+    activePlayer = 0;
+    currentRound = 1;
+    gameOver.firstElementChild.innerHTML =
+        'You won, <strong id="winner-name">PLAYER NAME</strong>!';
+    gameOver.style.display = 'none';
+
+    let gameBoardIndex = 0;
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            gameData[i][j] = 0;
+            gameFieldElements[gameBoardIndex].textContent = '';
+            gameFieldElements[gameBoardIndex].classList.remove('disabled');
+            gameBoardIndex++;
+        }
+    }
+}
+
 function startNewGame() {
     if (!players[0].name || !players[1].name) {
         alert('Please set player names for both players!');
         return;
     }
+
+    resetGameStatus();
 
     activePlayerName.textContent = players[activePlayer].name;
     gameArea.style.display = 'block';
@@ -93,10 +113,10 @@ function gameOverCheck() {
 }
 
 function endGame(winnerId) {
-    gameOver.style.display = 'block';
     if (winnerId > 0) {
-        winnerName.textContent = players[winnerId - 1].name;
+        gameOver.firstElementChild.firstElementChild.textContent = players[winnerId - 1].name;
     } else {
-        gameOver.firstElementChild.textContent = 'It\'s a draw!';
+        gameOver.firstElementChild.textContent = "It's a draw!";
     }
+    gameOver.style.display = 'block';
 }
