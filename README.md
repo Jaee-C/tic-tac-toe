@@ -4,7 +4,6 @@
 + [About](#about)
 + [Getting Started](#getting_started)
 + [Usage](#usage)
-+ [Contributing](../CONTRIBUTING.md)
 
 ## About <a name = "about"></a>
 This is a browser-side tic tac toe game created using HTML, CSS and JavaScript. I created this project as part of my journey to learning full-stack web development. This project summarises a lot of topics I've learnt in HTML and CSS, while introducing a couple of project-specific JavaScript functionality, such as implementing the game logic and handling form submissions.
